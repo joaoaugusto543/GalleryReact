@@ -55,7 +55,7 @@ async function getAlbum(req,res){
 
 }
 
-async function create(req,res){
+async function createAlbum(req,res){
     try {
 
         const {name}=req.body
@@ -132,7 +132,13 @@ async function deleteAlbum(req,res){
 
         const {id}=req.params
         
-        const {id:userId}=req.user
+        const userReq=req.user
+
+        if(!userReq){
+            return res.status(404).json({error:'User not found'})
+        }
+
+        const {id:userId}=userReq
 
         const conditionId=`id = '${id}'`
 
@@ -165,7 +171,7 @@ async function deleteAlbum(req,res){
 const albumController={
     getAlbum,
     getAlbums,
-    create,
+    createAlbum,
     updateAlbum,
     deleteAlbum
 }

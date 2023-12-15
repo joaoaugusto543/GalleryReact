@@ -34,13 +34,13 @@ function updateImageValidation(){
             .optional()
             .isString()
             .withMessage('Invalid name')
-            .isLength({max:30,min:1})
+            .isLength({max:30})
             .withMessage('Name too big or small'),
             body('description')
         .optional()
             .isString()
             .withMessage('Invalid description')
-            .isLength({min:1})
+            .isLength()
             .withMessage('Description too small')
     ]
 }

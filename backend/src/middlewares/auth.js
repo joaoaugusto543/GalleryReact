@@ -27,7 +27,7 @@ async function auth(req,res,next){
         next()
         
     } catch (error) {
-        return res.status(401).json('Invalid token')
+        return res.status(401).json({error:'Invalid token'})
     }
 }
 
