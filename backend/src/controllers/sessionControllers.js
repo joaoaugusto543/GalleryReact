@@ -11,11 +11,11 @@ async function create(req,res){
     const user=(await select('users','*',conditionEmail))[0]
 
     if(!user){
-        return res.status(404).json({authenticationErro:'user / password invalid'})
+        return res.status(404).json({authenticationError:'user / password invalid'})
     }
 
     if(!await verifyPassword(user,password)){
-        return res.status(404).json({authenticationErro:'user / password invalid'})
+        return res.status(404).json({authenticationError:'user / password invalid'})
     }
 
     const {id,name,profile_image}=user
