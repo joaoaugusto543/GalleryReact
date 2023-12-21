@@ -1,0 +1,32 @@
+.registerPage{
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boxRegister{
+    height: 800px;
+    width: 450px;
+    background-color: aliceblue;
+    box-shadow: 12px 11px 9px -5px #222;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5em;
+}
+
+.boxRegister h1{
+    font-size: 40px;
+    font-family: 'DM Serif Display', serif;
+    color: #059b9a;
+    margin-bottom: 0.5em;
+}
+
+.boxRegister a{
+    color: #059b9a;
+    margin-top: 2.5em;
+    font-size: 18px
+}
