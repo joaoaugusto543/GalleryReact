@@ -1,0 +1,42 @@
+.navBar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+    background-color: #095169;
+    padding: 1em 2em;
+    box-shadow: 0px 3px 11px 6px #222;
+    user-select: none;
+}
+
+.navBar h1{
+    color: #53ba83;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 4px 7px #222;
+}
+
+.logout{
+    width: 150px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.logout svg{
+    font-size: 30px;
+    margin-right: 0.3em;
+}
+
+.logout:hover{
+    color: #53ba83;
+}
