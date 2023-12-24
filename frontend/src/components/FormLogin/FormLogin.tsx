@@ -3,7 +3,7 @@ import loginInterface from '../../interfaces/auth/LoginInterface'
 import './FormLogin.css'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { login } from '../../slices/authSlice'
-import Loader from '../Loader/Loader'
+import Loader from '../Loaders/LoaderPage/LoaderPage'
 
 function FormLogin() {
 

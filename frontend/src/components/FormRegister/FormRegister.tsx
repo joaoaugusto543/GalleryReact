@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './FormRegister.css'
 import convertToBase64 from '../../services/convertToBase64'
 import {upload} from '../../api/api'
@@ -6,7 +6,7 @@ import registerInterface from '../../interfaces/auth/RegisterInterface'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { createUser } from '../../slices/userSlices'
 import { login } from '../../slices/authSlice'
-import Loader from '../Loader/Loader'
+import Loader from '../Loaders/LoaderPage/LoaderPage'
 
 function FormRegister() {
 
@@ -17,7 +17,7 @@ function FormRegister() {
     const [profileImage,setProfileImage]=useState<string | null | unknown>(null)
     const dispatch=useAppDispatch()
     const {loading:loadingAuth}=useAppSelector(state => state.auth)
-    const {loading:loadingUser}=useAppSelector(state => state.user)
+    const {loading:loadingUser,success}=useAppSelector(state => state.user)
 
     async function handleSubmit(e : React.SyntheticEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -26,14 +26,21 @@ function FormRegister() {
            name,
            email,
            password,
-           confirmPassword,
-           profile_image:profileImage
+           confirmPassword
+        }
+
+        if(profileImage){
+            register.profile_image=profileImage
         }
 
         await dispatch(createUser(register))
-        await dispatch(login({email,password}))
-
     }
+
+    useEffect(()=>{
+        if(success){
+            dispatch(login({email,password}))
+        }
+    },[success])
 
     async function handleFile(e : React.BaseSyntheticEvent){
         const file : File=e.target.files[0]
@@ -70,7 +77,7 @@ function FormRegister() {
 
             }
             <label>
-                <span>Name:</span>
+                <span>Nome:</span>
                 <input type='text' placeholder='Digite seu nome' value={name} onChange={e => setName(e.target.value)}/>
             </label>
             <label>

@@ -117,7 +117,7 @@ async function updateAlbum(req,res){
 
         await update('albums',set,conditionId)
 
-        const updatedAlbum=(await select('albums',['name'],conditionId))[0]
+        const updatedAlbum=(await select('albums',['name','id'],conditionId))[0]
 
         return res.status(200).json(updatedAlbum)
         
@@ -152,7 +152,7 @@ async function deleteAlbum(req,res){
             return res.status(401).json({error:'Not authorized'})
         }
 
-        const deletedAlbum=(await select('albums',['name'],conditionId))[0]
+        const deletedAlbum=(await select('albums',['name','id'],conditionId))[0]
 
         const conditionIdAlbum = `album_id = '${id}'`
         

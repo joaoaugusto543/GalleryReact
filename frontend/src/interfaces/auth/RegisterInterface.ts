@@ -3,5 +3,5 @@ export default interface registerInterface{
     email:string,
     password:string,
     confirmPassword:string,
-    profile_image:string | null | unknown,
+    profile_image?:string | null | unknown ,
 }

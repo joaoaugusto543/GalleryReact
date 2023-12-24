@@ -1,6 +1,12 @@
+import Albums from '../../components/Albums/Albums'
+import './Home.css'
+
 function Home() {
   return (
-    <div>Home</div>
+    <section className='home'>
+      <h1 className='title'>Álbuns</h1>
+      <Albums/>
+    </section>
   )
 }
 
