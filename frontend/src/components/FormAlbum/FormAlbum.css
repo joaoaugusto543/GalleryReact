@@ -1,0 +1,71 @@
+.formAlbum{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0,0.5);
+    flex-direction: column;
+    z-index: 12;
+}
+
+.formAlbumBox{
+    background-color: #fff;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    box-shadow: 14px 14px 9px -7px #000;
+}
+
+.formAlbumBox h1{
+    margin-bottom: 0.5em;
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+}
+
+.formAlbumBox form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.formAlbumBox form > label{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formAlbumBox form > label > span{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.formAlbumBox form > label > input[type='text']{
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 14px;
+}
+
+.formAlbumBox form > input[type='submit']{
+    height: 30px;
+    width: 120px;
+    border: none;
+    background-color: #53ba83;
+    border-radius:30px ;
+    margin-top: 2em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.formAlbumBox form > input[type='submit']:hover{
+    background-color: #5fd496;
+}

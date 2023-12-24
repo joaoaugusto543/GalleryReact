@@ -1,0 +1,13 @@
+.home{
+    padding: 4em 5em;
+}
+
+.title{
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 1em;
+    font-family: 'DM Serif Display', serif;
+    color: #53ba83;
+    text-shadow: 2px 2px 6px #222;
+    letter-spacing: 3px;
+}

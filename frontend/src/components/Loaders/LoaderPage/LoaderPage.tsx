@@ -1,6 +1,6 @@
-import './Loader.css'
+import './LoaderPage.css'
 
-function Loader() {
+function LoaderPage() {
   return (
     <section className='loaderPage'>
         <div className='loader'></div>
@@ -8,4 +8,4 @@ function Loader() {
   )
 }
 
-export default Loader
+export default LoaderPage
