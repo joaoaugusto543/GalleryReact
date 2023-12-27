@@ -24,6 +24,19 @@ export const getAlbums=createAsyncThunk('albums/getAlbums',async (data:{token:st
 
 })
 
+export const getAlbum=createAsyncThunk('albums/getAlbum',async (data:{idAlbum:string,token:string},thunkAPI) : Promise<any>=>{
+    const {token,idAlbum}=data
+
+    const res=await albumsServices.getAlbum(idAlbum,token)
+
+    if(res.error){
+        return thunkAPI.rejectWithValue(res.error)
+    }
+
+    return res
+
+})
+
 export const createAlbum=createAsyncThunk('albums/createAlbum',async (data:{name:string,token:string | null},thunkAPI) : Promise<any>=>{
     const {token}=data
 
@@ -79,6 +92,9 @@ const albumsSlice=createSlice({
     reducers:{
         resetError:function (state){
             state.error=null
+        },
+        resetAlbum:function(state){
+            state.album=null
         }
     },
     extraReducers:function(build){
@@ -87,6 +103,7 @@ const albumsSlice=createSlice({
             state.albums=action.payload
             state.loading=false
             state.success=true
+            state.error=null
         })
         .addCase(getAlbums.pending,(state)=>{
             state.loading=true
@@ -99,6 +116,7 @@ const albumsSlice=createSlice({
             state.albums?.push(action.payload)
             state.loading=false
             state.success=true
+            state.error=null
         })
         .addCase(createAlbum.pending,(state)=>{
             state.loading=true
@@ -117,6 +135,7 @@ const albumsSlice=createSlice({
             })
             state.loading=false
             state.success=true
+            state.error=null
         })
         .addCase(updateAlbum.pending,(state)=>{
             state.loading=true
@@ -129,6 +148,7 @@ const albumsSlice=createSlice({
             state.albums=state.albums?.filter(album => album.id !== action.payload.id)
             state.loading=false
             state.success=true
+            state.error=null
         })
         .addCase(deleteAlbum.pending,(state)=>{
             state.loading=true
@@ -137,9 +157,22 @@ const albumsSlice=createSlice({
             state.error=action.payload
             state.loading=false
         })
+        .addCase(getAlbum.fulfilled,(state,action)=>{
+            state.album=action.payload
+            state.loading=false
+            state.success=true
+            state.error=null
+        })
+        .addCase(getAlbum.pending,(state)=>{
+            state.loading=true
+        })
+        .addCase(getAlbum.rejected,(state,action)=>{
+            state.error=action.payload
+            state.loading=false
+        })
         
     }
 })
 
-export const {resetError}=albumsSlice.actions
+export const {resetError,resetAlbum}=albumsSlice.actions
 export default albumsSlice.reducer

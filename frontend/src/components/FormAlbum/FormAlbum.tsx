@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './FormAlbum.css'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { createAlbum, updateAlbum } from '../../slices/albumsSlice'
+import { IoClose } from 'react-icons/io5'
 
 type Props = {
     setShowFormAlbum:Function,
@@ -54,8 +55,9 @@ function FormAlbum({setShowFormAlbum,action,albumId,nameAlbum}: Props) {
 
   return (
     <div className='formAlbum'>
+        <button className='close' onClick={()=>setShowFormAlbum(false)}><IoClose /></button>
         <div className='formAlbumBox'>
-            {action === 'create' ? <h1>Novo Albúm</h1> : <h1>Editar Albúm</h1>}
+            {action === 'create' ? <h1>Novo Álbum</h1> : <h1>Editar Álbum</h1>}
             <form onSubmit={handleSubmit}>
                 <label>
                     <span>Nome:</span>

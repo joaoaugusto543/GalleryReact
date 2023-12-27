@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { deleteAlbum } from '../../slices/albumsSlice'
 import { useAppDispatch, useAppSelector } from '../../store'
 import './ConfigAlbum.css'
+import Warning from '../Warning/Warning'
 
 type Props = {
   setShowEditForm:Function
@@ -12,6 +14,7 @@ function ConfigAlbum({setShowEditForm,setConfigAlbum,albumId}:Props) {
 
   const dispatch=useAppDispatch()
   const {token}=useAppSelector(state => state.auth)
+  const [showWarning,setShowWarning]=useState<boolean>(false)
 
   function handleShowFormEditAlbum(){
     setShowEditForm(true)
@@ -26,11 +29,14 @@ function ConfigAlbum({setShowEditForm,setConfigAlbum,albumId}:Props) {
     }
     
     dispatch(deleteAlbum(data))
+    setShowWarning(false)
+    setConfigAlbum(false)
   }
 
   return (
     <div className='configAlbum'>
-        <button onClick={handleDeleteAlbum}>Excluir</button>
+        {showWarning && <Warning setShowWarning={setShowWarning} action={handleDeleteAlbum} text='Tem certeza que deseja deletar esse álbum?'/>}
+        <button onClick={()=>setShowWarning(true)}>Excluir</button>
         <button onClick={handleShowFormEditAlbum}>Editar</button>
     </div>
   )

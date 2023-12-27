@@ -1,0 +1,63 @@
+.loaderImage{
+    background-color: rgb(190, 190, 190);
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 9px 5px 15px 0px #222;
+    margin-right: 3em;
+    margin-bottom: 3em;
+}
+
+.loaderImage svg{
+    font-size: 80px;
+    transform: translateZ();
+    animation: searchImages 5s infinite ease;
+}
+
+@keyframes searchImages{
+    0%{
+        font-size: 80px;
+    }
+
+    10%{
+        font-size: 150px;
+    }
+
+    20%{
+        font-size: 80px;
+    }
+
+    30%{
+        font-size: 150px;
+    }
+
+    40%{
+        font-size: 80px;
+    }
+
+    50%{
+        font-size: 150px;
+    }
+
+    60%{
+        font-size: 80px;
+    }
+
+    70%{
+        font-size: 150px;
+    }
+
+    80%{
+        font-size: 80px;
+    }
+
+    90%{
+        font-size: 150px;
+    }
+
+    100%{
+        font-size: 80px;
+    }
+}
