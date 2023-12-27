@@ -1,8 +1,8 @@
 export default interface image{
     album_id:string,
-    data:string,
-    description:string,
+    date:string,
+    description?:string,
     id:string,
     image:string,
-    name:string
+    name?:string
 }

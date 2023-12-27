@@ -62,7 +62,7 @@ function Album({album}:props) {
                 <img src={images[3].image} alt={images[1].name} />
               </div>
             }
-            <div className='backgroundImage'>
+            <div className='backgroundAlbum'>
               <h1>{album.name}</h1>
             </div>
           </Link>

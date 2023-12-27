@@ -22,6 +22,28 @@ async function getAlbums(token:string) : Promise<any>{
     }
 }
 
+async function getAlbum(idAlbum:string,token:string) : Promise<any>{
+
+    try {
+
+        api.defaults.headers.authorization=`Bearer ${token}`
+        
+        const response= await api.get(`albums/${idAlbum}`)
+    
+        const data = response.data
+    
+        return data
+
+    } catch (error : any) {
+
+        const data = error.response.data
+
+        console.log(data)
+
+        return data
+    }
+}
+
 async function createAlbum(newAlbum:{name:string},token:string | null) : Promise<any>{
 
     try {
@@ -92,7 +114,8 @@ const albumsServices={
     getAlbums,
     createAlbum,
     updateAlbum,
-    deleteAlbum
+    deleteAlbum,
+    getAlbum
 }
 
 export default albumsServices
