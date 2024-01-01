@@ -2,7 +2,7 @@
 
 ![galleryReact](https://github.com/joaoaugusto543/GalleryReact/assets/119535029/5ba3c821-7864-4684-a388-53b2e522353e)
 
-GalleryReact é um site que armazena fotos em álbuns, guarde seus melhores momentos!😁
+GalleryReact é um site que armazena fotos em álbuns, guarde seus melhores momentos!😁 O site foi desenvolvido com NodeJs(back-end) e ReactTs(front-end). 
 
 ## Funções
 
