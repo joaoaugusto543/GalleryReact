@@ -2,3 +2,20 @@
     padding: 4em 5em;
 }
 
+@media(max-width:655px){
+    .albumPage{
+        padding: 2em 3em;
+    }
+}
+
+@media(max-width:400px){
+    .albumPage{
+        padding: 2em 1em;
+    }
+}
+
+@media(max-width:279px){
+    .albumPage{
+        width: 280px;
+    }
+}

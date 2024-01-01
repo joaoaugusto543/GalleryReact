@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,4 +53,85 @@
 
 .buttonsWarning > button:last-child:hover{
     background-color: #62d698;
+}
+
+@media(max-width:1000px){
+    .warningBox{
+        height: 200px;
+        width: 400px;
+    }
+
+    .warningBox h1{
+        font-size: 18px;
+    }
+    
+    .buttonsWarning > button{
+        width: 90px;
+        height: 25px;
+        font-size: 12px;
+    }
+    
+}
+
+@media(max-width:1000px){
+    .warningBox{
+        height: 200px;
+        width: 400px;
+    }
+
+    .warningBox h1{
+        font-size: 18px;
+    }
+    
+    .buttonsWarning > button{
+        width: 90px;
+        height: 25px;
+        font-size: 12px;
+    }
+    
+}
+
+@media(max-width:600px){
+    .warningBox{
+        height: 150px;
+        width: 300px;
+        padding: 1em;
+    }
+
+    .warningBox h1{
+        font-size: 16px;
+    }
+    
+    .buttonsWarning > button{
+        width: 70px;
+        height: 23px;
+        font-size: 11px;
+    }
+    
+}
+
+@media(max-width:350px){
+    .warningBox{
+        height: 130px;
+        width: 250px;
+        padding: 1em;
+    }
+
+    .warningBox h1{
+        font-size: 14px;
+    }
+    
+    .buttonsWarning > button{
+        width: 70px;
+        height: 23px;
+        font-size: 11px;
+    }
+    
+}
+
+@media(max-width:279px){
+    .warning{
+        width: 280px;
+        overflow-x: hidden;
+    }
 }

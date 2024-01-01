@@ -17,3 +17,45 @@
     font-size: 70px;
     color: rgb(51, 51, 51);
 }
+
+@media(max-width:1047px){
+    .insertImage{
+        width: 300px;
+        height: 300px;
+    }
+
+    .insertImage svg{
+        font-size: 60px;
+    }
+}
+
+@media(max-width:750px){
+    .insertImage{
+        margin-right: 0;
+    }
+}
+
+@media(max-width:500px){
+    .insertImage{
+        width: 250px;
+        height: 250px;
+    }
+
+    .insertImage svg{
+        font-size: 45px;
+    }
+}
+
+
+@media(max-width:400px){
+    .insertImage{
+        width: 200px;
+        height: 200px;
+    }
+
+    .insertImage svg{
+        font-size: 45px;
+    }
+    
+
+}

@@ -47,13 +47,12 @@ function updateUserValidation(){
         .withMessage('Name is required')
         .isLength({max:30,min:3})
         .withMessage('Name too big or small'),
-        body('password')
+        body('newPassword')
         .optional()
         .isString()
-        .withMessage('Password is required')
-        .isEmail()
+        .withMessage('NewPassword is required')
         .isLength({min:6})
-        .withMessage('Password too small')
+        .withMessage('NewPassword too small')
         .custom((value,{req})=>{
 
             if(value!==req.body.confirmPassword){

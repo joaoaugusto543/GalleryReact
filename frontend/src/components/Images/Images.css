@@ -3,3 +3,9 @@
     flex-wrap: wrap;
     align-items: center;
 }
+
+@media(max-width:847px){
+    .images{
+        justify-content: center;
+    }
+}

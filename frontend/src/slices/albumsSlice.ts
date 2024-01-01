@@ -95,6 +95,9 @@ const albumsSlice=createSlice({
         },
         resetAlbum:function(state){
             state.album=null
+        },
+        resetSuccess:function(state){
+            state.success=false
         }
     },
     extraReducers:function(build){
@@ -102,7 +105,6 @@ const albumsSlice=createSlice({
         .addCase(getAlbums.fulfilled,(state,action)=>{
             state.albums=action.payload
             state.loading=false
-            state.success=true
             state.error=null
         })
         .addCase(getAlbums.pending,(state)=>{
@@ -160,7 +162,6 @@ const albumsSlice=createSlice({
         .addCase(getAlbum.fulfilled,(state,action)=>{
             state.album=action.payload
             state.loading=false
-            state.success=true
             state.error=null
         })
         .addCase(getAlbum.pending,(state)=>{
@@ -174,5 +175,5 @@ const albumsSlice=createSlice({
     }
 })
 
-export const {resetError,resetAlbum}=albumsSlice.actions
+export const {resetError,resetAlbum,resetSuccess}=albumsSlice.actions
 export default albumsSlice.reducer

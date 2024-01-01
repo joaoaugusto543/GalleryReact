@@ -1,3 +1,7 @@
+.logo > a{
+    text-decoration: none;
+}
+
 .navBar{
     position: relative;
     width: 100%;
@@ -51,13 +55,19 @@
     justify-content: center;
 }
 
-.navBar a{
-   display: flex;
-   align-items: center;
-   justify-content: center; 
+.navBar > a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:0.2em ;
+}
+
+.userName{
    text-decoration: none;
    color: #fff;
    font-size: 20px;
+   word-wrap: break-word;
 }
 
 .navBar a > img{
@@ -66,3 +76,113 @@
     border-radius: 50px;
     margin-right: 0.5em;
 }
+
+@media(max-width:900px){
+    .userName{
+        font-size: 18px;
+     }
+
+     .navBar a > img{
+        width: 35px;
+        height: 35px;
+    }
+
+    .navBar{
+        padding: 1em 3em;
+    }
+
+    .navBar h1{
+        font-size: 30px;
+    }
+
+    .logout{
+        font-size: 18px;
+    }
+
+    .logout > svg{
+        font-size: 25px;
+        margin-left: 0.1em;
+    }
+}
+
+@media(max-width:700px){
+    .navBar{
+        padding: 1em 2em;
+    }
+}
+
+@media(max-width:642px){
+    .navBar{
+        padding: 1em 1em;
+    }
+}
+
+@media(max-width:570px){
+
+    .navBar{
+        height: 100px;
+    }
+
+    .logout{
+        font-size: 16px;
+    }
+
+    .logout > svg{
+        font-size: 20px;
+    }
+
+    .userName{
+        font-size: 16px;
+     }
+
+     .navBar a > img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .navBar h1{
+        font-size: 25px;
+    }
+}
+
+@media(max-width:500px){
+    .userName{
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 150px; 
+
+     }
+
+     .navBar a > img{
+        width: 25px;
+        height: 25px;
+    }
+
+    .navBar h1{
+        font-size: 20px;
+    }
+
+    .logout{
+        font-size: 14px;
+    }
+
+    .logout > svg{
+        font-size: 18px;
+    }
+}
+
+@media(max-width:374px){
+    .userName{
+        font-size: 14px;
+        width: 90px;
+     }
+
+}
+
+@media(max-width:279px){
+    .navBar{
+        width: 280px;
+    }
+}
+

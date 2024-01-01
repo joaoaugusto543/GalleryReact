@@ -24,6 +24,7 @@ function FormImage({setShowFormImage,action,albumId,imageProps}: Props) {
     const [name,setName]=useState<string>(imageProps?.name ? imageProps.name : '' )
     const [image,setImage]=useState<string | null | undefined>(imageProps?.image)
     const [description,setDescription]=useState<string>(imageProps?.description ? imageProps.description : '')
+    const [error,setError]=useState<string>('')
 
     const {token}=useAppSelector(state => state.auth)
     const dispatch=useAppDispatch()
@@ -117,6 +118,11 @@ function FormImage({setShowFormImage,action,albumId,imageProps}: Props) {
                 }
             }
     
+        }else{
+            setError('Foto inválida')
+            setTimeout(()=>{
+                setError('')
+            },3000)
         }
 
         
@@ -145,11 +151,14 @@ function FormImage({setShowFormImage,action,albumId,imageProps}: Props) {
             {action === 'create' ? <h1>Nova Foto</h1> : <h1>Editar Foto</h1>}
             {image && <img className='newImage' src={image} alt={name} />}
             <form onSubmit={handleSubmit}>
-                {action === 'create' && 
-                    <label id='fileImage'>
-                        <input type='file' accept='image/*' onChange={handleFile} />
-                        {!image ? <span>Adicione uma foto</span> : <span>Alterar foto</span>}
-                    </label>
+                {action === 'create' &&
+                    <>
+                        <label id='fileImage'>
+                            <input type='file' accept='image/*' onChange={handleFile} />
+                            {!image ? <span>Adicione uma foto</span> : <span>Alterar foto</span>}
+                        </label>
+                        {error && <p className='error' id='errorImage'>{error}</p>}
+                    </>
                 }
                 <label className='labelName'>
                     <span>Nome:</span>

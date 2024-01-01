@@ -21,6 +21,61 @@ async function createUser(user : registerInterface) : Promise<any>{
     }
 }
 
+async function profile(token:string){
+    try {
+
+        api.defaults.headers.authorization=`Bearer ${token}`
+        
+        const response= await api.get('users/')
+    
+        const data = response.data
+    
+        return data
+
+    } catch (error : any) {
+
+        const data = error.response.data
+
+        console.log(data)
+
+        return data
+    }
+}
+
+interface userUpdated{
+    name?:string,
+    newPassword?:string,
+    confirmPassword?:string,
+    password?:string,
+    profile_image?:string
+}
+
+async function updateUser(userUpdated : userUpdated,token:string) : Promise<any>{
+
+    try {
+
+        console.log(userUpdated)
+
+        api.defaults.headers.authorization=`Bearer ${token}`
+        
+        const response= await api.put('users/',userUpdated)
+    
+        const data = response.data
+    
+        return data
+
+    } catch (error : any) {
+
+        const data = error.response.data
+
+        console.log(data)
+
+        return data
+    }
+}
+
 export const userServices={
-    createUser
+    createUser,
+    profile,
+    updateUser
 }

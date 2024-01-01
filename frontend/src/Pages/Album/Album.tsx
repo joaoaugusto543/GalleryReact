@@ -32,7 +32,7 @@ function Album() {
         {loading && <LoaderPage/>}
         <h1 className='title'>{album?.name}</h1>
         <Images id={id}/>
-        <span className='dateCreate'>Criado em {album?.date}</span>
+        <p className='dateCreate'>Criado em {album?.date}</p>
       </section>
     </>
   )

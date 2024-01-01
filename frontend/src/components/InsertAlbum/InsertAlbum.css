@@ -17,3 +17,45 @@
     font-size: 70px;
     color: rgb(51, 51, 51);
 }
+
+@media(max-width:1047px){
+    .insertAlbum{
+        width: 300px;
+        height: 300px;
+    }
+
+    .insertAlbum svg{
+        font-size: 60px;
+    }
+}
+
+@media(max-width:750px){
+    .insertAlbum{
+        margin-right: 0;
+    }
+}
+
+@media(max-width:500px){
+    .insertAlbum{
+        width: 250px;
+        height: 250px;
+    }
+
+    .insertAlbum svg{
+        font-size: 45px;
+    }
+}
+
+
+@media(max-width:400px){
+    .insertAlbum{
+        width: 200px;
+        height: 200px;
+    }
+
+    .insertAlbum svg{
+        font-size: 45px;
+    }
+    
+
+}

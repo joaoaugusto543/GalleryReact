@@ -31,3 +31,33 @@
     background-color: red;
     color: #fff;
 }
+
+@media(max-width:600px){
+    .configAlbum{
+        top: 6px;
+        right: -90px;
+        width: 100px;
+        height: 40px;
+        box-shadow: 4px 15px 11px 3px #222;
+    }
+}
+
+@media(max-width:450px){
+    .configAlbum{
+        top: 15px;
+        right: 123px;
+        height: 25px;
+    }
+
+    .configAlbum button{
+        font-size: 12px;
+    }
+}
+
+@media(max-width:400px){
+    .configAlbum{
+        top: 15px;
+        right: 76px;
+        height: 25px;
+    }
+}

@@ -6,6 +6,12 @@
     width: 80%;
 }
 
+#errorLogin{
+    font-size: 18px;
+    margin-bottom: 1em;
+    margin-top: -0.2em ;
+}
+
 .loginForm label{
     width: 100%;
     display: flex;

@@ -15,7 +15,7 @@ function ConfigAlbum({setShowEditForm,setConfigAlbum,albumId}:Props) {
   const dispatch=useAppDispatch()
   const {token}=useAppSelector(state => state.auth)
   const [showWarning,setShowWarning]=useState<boolean>(false)
-
+ 
   function handleShowFormEditAlbum(){
     setShowEditForm(true)
     setConfigAlbum(false)

@@ -101,3 +101,81 @@
     height: 50%;
     object-fit: cover;
 }
+
+@media(max-width:1047px){
+    .Album,.oneImage,.fourImages,.twoImages{
+        width: 300px;
+        height: 300px;
+    }
+
+    .backgroundAlbum{
+        width: 300px;
+        height: 300px;    
+    }
+    
+    .backgroundAlbum h1{
+        font-size: 25px;
+    }
+
+    .threePoints{
+        font-size: 25px;
+    }
+
+}
+
+@media(max-width:750px){
+    .Album{
+        margin-right: 0;
+    }
+}
+
+@media(max-width:500px){
+    .Album,.oneImage,.fourImages,.twoImages{
+        width: 250px;
+        height: 250px;
+    }
+
+    .backgroundAlbum{
+        width: 250px;
+        height: 250px;    
+    }
+    
+    .backgroundAlbum h1{
+        font-size: 25px;
+    }
+
+    .threePoints{
+        font-size: 25px;
+    }
+    
+
+}
+
+@media(max-width:450px){
+    .threePoints{
+        left: -219px;
+    }
+}
+
+@media(max-width:400px){
+    .Album,.oneImage,.fourImages,.twoImages{
+        width: 200px;
+        height: 200px;
+    }
+
+    .backgroundAlbum{
+        width: 200px;
+        height: 200px;    
+    }
+    
+    .backgroundAlbum h1{
+        font-size: 25px;
+    }
+
+    .threePoints{
+        font-size: 20px;
+        left: -168px;
+    }
+    
+
+}
