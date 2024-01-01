@@ -6,6 +6,7 @@ import Register from './Pages/Register/Register'
 import { useAppSelector } from './store'
 import Album from './Pages/Album/Album'
 import Image from './Pages/Image/Image'
+import Profile from './Pages/Profile/Profile'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       {user && <NavBar/>}
       <Routes>
         <Route path='/' element={user ? <Home/> : <Navigate to='/login'/>} />
+        <Route path='/profile' element={user ? <Profile/> : <Navigate to='/login'/>} />
         <Route path='/album/:id' element={user ? <Album/> : <Navigate to='/login'/>} />
         <Route path='/album/:albumId/:imageId' element={user ? <Image/> : <Navigate to='/login'/>} />
         <Route path='/login' element={!user ? <Login/> : <Navigate to='/'/>} />

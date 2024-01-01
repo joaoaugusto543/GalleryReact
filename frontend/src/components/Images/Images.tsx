@@ -29,6 +29,7 @@ function Images({id}: Props) {
     <section className='images'>
         <InsertImage setShowFormImage={setShowFormImage}/>
         {loading && <LoaderImage/>}
+        {!images && !loading && <LoaderImage/>}
         {images && images?.map(image => <Image key={image.id} image={image}/>)}
         {showFormImage && id && <FormImage action='create' imageProps={null} setShowFormImage={setShowFormImage} albumId={id}/>}
     </section>

@@ -1,0 +1,171 @@
+.formEditUser{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+}
+
+.formEditUser > img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+
+#fileEditUser{
+    width: 150px;
+    height: 35px;
+    background-color:#059b9a;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+#fileEditUser > span{
+    margin: 0;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.formEditUser form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.formEditUser form > label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.formEditUser form > label:first-child{
+    margin-top: 0;
+}
+
+.formEditUser form > label > span{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.formEditUser form > label > input{
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.formEditUser form > label > input[type='file']{
+    display: none;
+}
+
+.formEditUser input[type='submit']{
+    width: 150px;
+    height: 30px;
+    background-color: #059b9a;
+    border: none;
+    color: #fff;
+    border-radius:40px;
+    margin-top: 1.5em;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.editPassword{
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: #059b9a;
+    margin-top: 1em;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media(max-width:1260px){
+    .formEditUser{
+        width: 70%;
+    }
+    
+}
+
+@media(max-width:800px){
+
+    .formEditUser > img{
+        width: 100px;
+        height: 100px;
+    }
+    
+    #fileEditUser{
+        width: 120px;
+        height: 27px;
+    }
+    
+    #fileEditUser > span{
+        font-size: 14px;
+    }
+        
+    .formEditUser form > label > span{
+        font-size: 16px;
+    }
+    
+    .formEditUser form > label > input{
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .formEditUser input[type='submit']{
+        width: 100px;
+        height: 25px;
+        font-size: 14px;
+    }
+    
+    .editPassword{
+        font-size: 14px;
+    }
+}
+
+@media(max-width:600px){
+
+    .formEditUser{
+        width: 100%;
+    }
+}
+
+@media(max-width:450px){
+    .formEditUser > img{
+        width: 90px;
+        height: 90px;
+    }
+    
+    #fileEditUser{
+        width: 100px;
+        height: 25px;
+    }
+    
+    #fileEditUser > span{
+        font-size: 12px;
+    }
+        
+    .formEditUser form > label > span{
+        font-size: 14px;
+    }
+    
+    .formEditUser input[type='submit']{
+        width: 90px;
+        height: 20px;
+        font-size: 12px;
+    }
+    
+    .editPassword{
+        font-size: 12px;
+    }
+}

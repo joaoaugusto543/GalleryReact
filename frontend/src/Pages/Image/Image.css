@@ -64,4 +64,87 @@
     color: #53ba83;
 }
 
+@media(max-width:1200px){
+    .imagePage{
+        padding: 4em 7em;
+    }
+    
+    .imagePage > img{
+        width: 400px;
+        height: 400px;    
+    }
+    
+    .divDescription{
+        width: 400px;
+    }
+    
+    
+ 
+}
+
+@media(max-width:600px){
+    
+    .imagePage > img{
+        width: 300px;
+        height: 300px;    
+    }
+    
+    .divDescription{
+        width: 300px;
+    }
+    
+    .divDescription p{
+        font-size: 20px;
+    }
+    
+    #titleImagePage{
+        font-size: 40px;
+        text-shadow: 2px 2px 4px #222;
+    }
+        
+    .buttonsImage > button{
+        height: 25px;
+        width: 90px;
+        font-size: 18px;
+    }
+    
+    .buttonsImage > button > svg{
+        font-size: 20px;
+    }
+}
+
+@media(max-width:500px){
+    .imagePage{
+        padding: 4em 1em;
+    }
+}
+
+@media(max-width:400px){
+    .imagePage > img{
+        width: 230px;
+        height: 230px;    
+    }
+    
+    .divDescription{
+        width: 230px;
+    }
+    
+    .divDescription p{
+        font-size: 20px;
+    }
+    
+    #titleImagePage{
+        font-size: 30px;
+        text-shadow: 2px 2px 3px #222;
+    }
+        
+    .buttonsImage > button{
+        width: 80px;
+        font-size: 16px;
+    }
+    
+    .buttonsImage > button > svg{
+        font-size: 18px;
+    }
+}
 

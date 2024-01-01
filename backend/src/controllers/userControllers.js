@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require('uuid')
 const { insert, select, update } = require('../config/db')
-const { encryptPassword } = require('../services/cryptography')
+const { encryptPassword, verifyPassword } = require('../services/cryptography')
 
 async function createUser(req,res){
     try {
@@ -43,7 +43,7 @@ async function createUser(req,res){
 async function updateUser(req,res){
     try {
 
-        const {name,newPassword,profile_image}=req.body
+        const {name,newPassword,profile_image,password}=req.body
 
         const userReq=req.user
 
@@ -55,13 +55,20 @@ async function updateUser(req,res){
 
         let setArray=[]
         let set=''
-
+        
         if(name){
             setArray.push({name})
         }
-
+        
         if(newPassword){
-            setArray.push({password:newPassword})
+
+            const {password:userPassword}=(await select('users',['password'],`id = '${id}'`))[0]
+
+            if(!await verifyPassword({password:userPassword},password)){
+                return res.status(401).json({error:'Authentication error'})
+            }
+
+            setArray.push({password:await encryptPassword(newPassword)})
         }
 
         if(profile_image){
@@ -100,7 +107,7 @@ async function updateUser(req,res){
 
         await update('users',set,conditionId)
 
-        const user=(await select('users',['name','profile_image'],conditionId))[0] 
+        const user=(await select('users',['id','name','email','profile_image'],conditionId))[0] 
 
         return res.status(200).json(user)
      

@@ -3,3 +3,9 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+@media(max-width:847px){
+    .albums{
+        justify-content: center;
+    }
+}

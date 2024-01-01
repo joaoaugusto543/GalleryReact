@@ -4,6 +4,7 @@ import './FormLogin.css'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { login } from '../../slices/authSlice'
 import Loader from '../Loaders/LoaderPage/LoaderPage'
+import useShowErrorSession from '../../hooks/useShowErrorSession'
 
 function FormLogin() {
 
@@ -11,6 +12,7 @@ function FormLogin() {
     const [password,setPassword]=useState<string>('')
     const dispatch=useAppDispatch()
     const {loading} = useAppSelector(state => state.auth)
+    const {errorSession}=useShowErrorSession()
 
     async function handleSubmit(e : React.SyntheticEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -25,7 +27,7 @@ function FormLogin() {
 
   return (
     <>
-        {loading && <Loader/>}
+        {errorSession && <p id='errorLogin' className='error'>{errorSession}</p>}
         <form onSubmit={handleSubmit} className='loginForm'>
             <label>
                 <span>Email:</span>
@@ -35,7 +37,7 @@ function FormLogin() {
                 <span>Senha:</span>
                 <input type='password' placeholder='Digite sua senha' value={password} onChange={e => setPassword(e.target.value)}/>
             </label>
-            <input type='submit' value='Entrar' />
+            {!loading ? <input type='submit' value='Entrar' /> : <input type='submit' onClick={(e)=>e.preventDefault()} disabled value='Aguarde...' />}
         </form>
     </>
   )

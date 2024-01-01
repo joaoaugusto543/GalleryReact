@@ -70,14 +70,78 @@
     background-color: #5fd496;
 }
 
-.close{
-    position: fixed;
-    top: 0;
-    right: 0;
-    font-size: 60px;
-    background-color: transparent;
-    border: none;
-    color: red;
-    padding: 0.2em;
-    cursor: pointer;
+@media(max-width:800px){
+    .formAlbumBox{
+        width: 350px;
+        height: 230px;
+    }
+
+    .formAlbumBox h1{
+        font-size: 25px;
+    }
+ 
+    .formAlbumBox form > input[type='submit']{
+        height: 25px;
+        width: 100px;
+        margin-top: 1.8em;
+    }
+    
+}
+
+@media(max-width:500px){
+    .formAlbumBox{
+        width: 300px;
+    }
+    
+    .formAlbumBox form > label > span{
+        font-size: 16px;
+    }
+    
+    .formAlbumBox form > label > input[type='text']{
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    .formAlbumBox form > input[type='submit']{
+        height: 25px;
+        width: 100px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width:400px){
+    .formAlbumBox{
+        width: 230px;
+        height: 200px;
+        padding: 1em 2em;
+    }
+
+    .formAlbumBox h1{
+        font-size: 20px;
+    }
+
+    
+    .formAlbumBox form > label > span{
+        font-size: 14px;
+    }
+    
+    .formAlbumBox form > label > input[type='text']{
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    .formAlbumBox form > input[type='submit']{
+        height: 20px;
+        width: 100px;
+        font-size: 11px;
+    }
+}
+
+@media(max-width:279px){
+    .formAlbum{
+        position: fixed;
+        width: 280px;
+        overflow-x: hidden;
+        
+    }
 }

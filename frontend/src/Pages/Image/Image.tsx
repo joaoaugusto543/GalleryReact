@@ -57,19 +57,23 @@ function Image() {
   
   return (
     <section className='imagePage'>
-        {showWarning && <Warning setShowWarning={setShowWarning} action={handleDeleteImage} text='Tem certeza que deseja deletar essa imagem?'/>}
-        {showFormImage && albumId && image && <FormImage action='edit' setShowFormImage={setShowFormImage} albumId={albumId} imageProps={image} />}
-        <div className='buttonsImage'>
-            <button onClick={()=>setShowFormImage(true)}><MdModeEditOutline />Editar</button>
-            <button onClick={()=>setShowWarning(true) }><MdDelete />Excluir</button>
-        </div>
         {loading && <LoaderPage/>}
-        {image?.name ? <h1 id='titleImagePage' className='title'>{image.name}</h1> : <h1 id='titleImagePage' className='title'>(Sem nome)</h1>}
-        <img src={image?.image} alt={image?.name} />
-        <div className='divDescription'>
-            {image?.description ? <p>{image.description}</p> : <p>(Sem descrição)</p>}
-        </div>
-        <span className='dateCreate'>Criado em {image?.date}</span>
+        {image &&
+          <>
+            {showWarning && <Warning setShowWarning={setShowWarning} action={handleDeleteImage} text='Tem certeza que deseja deletar essa imagem?'/>}
+            {showFormImage && albumId && image && <FormImage action='edit' setShowFormImage={setShowFormImage} albumId={albumId} imageProps={image} />}
+            <div className='buttonsImage'>
+                <button onClick={()=>setShowFormImage(true)}><MdModeEditOutline />Editar</button>
+                <button onClick={()=>setShowWarning(true) }><MdDelete />Excluir</button>
+            </div>
+            {image?.name ? <h1 id='titleImagePage' className='title'>{image.name}</h1> : <h1 id='titleImagePage' className='title'>(Sem nome)</h1>}
+            <img src={image?.image} alt={image?.name} />
+            <div className='divDescription'>
+                {image?.description ? <p>{image.description}</p> : <p>(Sem descrição)</p>}
+            </div>
+            <span className='dateCreate'>Criado em {image?.date}</span>
+          </>
+        }
     </section>
   )
 }

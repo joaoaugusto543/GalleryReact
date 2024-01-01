@@ -6,6 +6,7 @@ import Album from '../Album/Album'
 import InsertAlbum from '../InsertAlbum/InsertAlbum'
 import FormAlbum from '../FormAlbum/FormAlbum'
 import LoaderPage from '../Loaders/LoaderPage/LoaderPage'
+import useSuccesDeleteAlbum from '../../hooks/useSuccesDeleteAlbum'
 
 function Albums() {
 
@@ -13,6 +14,7 @@ function Albums() {
     const {token}=useAppSelector( state => state.auth)
     const dispatch=useAppDispatch()
     const [showFormAlbum,setShowFormAlbum]=useState<boolean>(false)
+    useSuccesDeleteAlbum()
 
     useEffect(()=>{
         if(token){
