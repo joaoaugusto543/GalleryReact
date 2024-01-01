@@ -3,7 +3,6 @@ import loginInterface from '../../interfaces/auth/LoginInterface'
 import './FormLogin.css'
 import { useAppDispatch, useAppSelector } from '../../store'
 import { login } from '../../slices/authSlice'
-import Loader from '../Loaders/LoaderPage/LoaderPage'
 import useShowErrorSession from '../../hooks/useShowErrorSession'
 
 function FormLogin() {

@@ -60,7 +60,7 @@ function FormRegister() {
     <>
         {loadingAuth && !loadingUser && <Loader/>}
         {!loadingAuth && loadingUser && <Loader/>}
-        {profileImage && <img className='imageProfile' src={profileImage} alt={name} />}
+        {profileImage && typeof(profileImage) === 'string' && <img className='imageProfile' src={profileImage} alt={name} />}
         <form onSubmit={handleSubmit} className='registerForm'>
            {!profileImage ?
 
